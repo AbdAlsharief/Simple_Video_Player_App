@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.*?>
+
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.task.FitController">
+
+    <top>
+        <HBox alignment="CENTER" spacing="10">
+            <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                <children>
+                    <Button fx:id="openButton" alignment="CENTER" onAction="#openVideo" text="Open Video" />
+                </children>
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets>
+                <HBox.margin>
+                    <Insets />
+                </HBox.margin>
+            </HBox>
+        </HBox>
+    </top>
+    <center>
+        <MediaView fx:id="mediaView" fitHeight="600" fitWidth="800" />
+    </center>
+    <bottom>
+        <HBox prefHeight="41.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button onAction="#playPauseVideo" text="Play/Pause" />
+                <Slider fx:id="seekSlider" onMouseDragged="#seekVideo" onMousePressed="#seekVideoStarted" onMouseReleased="#seekVideoFinished" prefHeight="14.0" prefWidth="471.0" />
+                <Label prefHeight="18.0" prefWidth="59.0" text="Volume" />
+                <Slider fx:id="volumeSlider" nodeOrientation="RIGHT_TO_LEFT" onDragDetected="#adjustVolume" prefHeight="14.0" prefWidth="113.0" />
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
